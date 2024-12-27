@@ -28,7 +28,7 @@ jobs:
 
       # 4. MySQL Docker 이미지 빌드 및 푸시
       - name: Build MySQL Docker image
-        working-directory: dockerdb
+        working-directory: dailyhubdb
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/dailyhubdb .
           
