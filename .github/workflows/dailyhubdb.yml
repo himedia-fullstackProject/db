@@ -24,6 +24,7 @@ jobs:
       - name: Delete old images
         run: |
           docker pull ${{ secrets.DOCKERHUB_USERNAME }}/dailyhubdb || true
+          docker rm ${{ secrets.DOCKERHUB_USERNAME }}/dailyhubdb || true
           docker rmi ${{ secrets.DOCKERHUB_USERNAME }}/dailyhubdb || true
 
       # 4. MySQL Docker 이미지 빌드 및 푸시
