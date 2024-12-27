@@ -3,7 +3,7 @@ name: Build and Push DB Docker Image
 on:
   push:
     branches:
-      - db
+      - main
 
 jobs:
   build_and_push: 
