@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: localhost    Database: dailyhub
+-- Host: 127.0.0.1    Database: dailyhub
 -- ------------------------------------------------------
 -- Server version	8.0.40
 
@@ -38,6 +38,7 @@ CREATE TABLE `user_tbl` (
 
 LOCK TABLES `user_tbl` WRITE;
 /*!40000 ALTER TABLE `user_tbl` DISABLE KEYS */;
+INSERT INTO `user_tbl` VALUES ('wlsgusan','1998-04-07','JHN','1111','01089478170');
 /*!40000 ALTER TABLE `user_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-27 16:34:30
+-- Dump completed on 2024-12-27 16:57:24
