@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dailyhub
 -- ------------------------------------------------------
--- Server version	8.0.39
+-- Server version	8.0.40
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,27 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `main_category_tbl`
+-- Table structure for table `sub_category_tbl`
 --
 
-DROP TABLE IF EXISTS `main_category_tbl`;
+DROP TABLE IF EXISTS `sub_category_tbl`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `main_category_tbl` (
+CREATE TABLE `sub_category_tbl` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `category_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `sub_category_name` varchar(50) NOT NULL,
+  `main_category_id` bigint DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKhto01q1mh2j25pstw3n30l9fy` (`main_category_id`),
+  CONSTRAINT `FKhto01q1mh2j25pstw3n30l9fy` FOREIGN KEY (`main_category_id`) REFERENCES `main_category_tbl` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `main_category_tbl`
+-- Dumping data for table `sub_category_tbl`
 --
 
-LOCK TABLES `main_category_tbl` WRITE;
-/*!40000 ALTER TABLE `main_category_tbl` DISABLE KEYS */;
-INSERT INTO `main_category_tbl` VALUES (1,'happy');
-/*!40000 ALTER TABLE `main_category_tbl` ENABLE KEYS */;
+LOCK TABLES `sub_category_tbl` WRITE;
+/*!40000 ALTER TABLE `sub_category_tbl` DISABLE KEYS */;
+INSERT INTO `sub_category_tbl` VALUES (1,'fashion',1),(2,'beauty',1),(3,'food',2),(4,'beverage',2),(5,'love',4),(6,'travel',4),(7,'etc',4);
+/*!40000 ALTER TABLE `sub_category_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-27 18:03:11
+-- Dump completed on 2024-12-28 20:02:53
