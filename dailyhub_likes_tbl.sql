@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `likes_tbl`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `likes_tbl` (
-  `id` bigint NOT NULL AUTO_INCREMENT,
-  `count` bigint DEFAULT NULL,
+  `id` bigint NOT NULL,
+  `user_id` bigint DEFAULT NULL,
   `post_id` bigint DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
+  `count` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FKq7bmv1ktdo5l696iswpnqkct8` (`post_id`),
-  KEY `FKlnay5s5wy4n8xgxwoh3ksvs6r` (`username`),
-  CONSTRAINT `FKlnay5s5wy4n8xgxwoh3ksvs6r` FOREIGN KEY (`username`) REFERENCES `user_tbl` (`username`),
-  CONSTRAINT `FKq7bmv1ktdo5l696iswpnqkct8` FOREIGN KEY (`post_id`) REFERENCES `post_tbl` (`id`)
+  KEY `likes_tbl_ibfk_1` (`user_id`),
+  KEY `likes_tbl_ibfk_2` (`post_id`),
+  CONSTRAINT `likes_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `likes_tbl_ibfk_2` FOREIGN KEY (`post_id`) REFERENCES `post_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-27 16:34:30
+-- Dump completed on 2024-12-28 21:36:04
