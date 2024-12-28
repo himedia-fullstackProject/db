@@ -24,10 +24,11 @@ DROP TABLE IF EXISTS `user_tbl`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_tbl` (
   `id` bigint NOT NULL AUTO_INCREMENT,
+  `birthday` date DEFAULT NULL,
+  `nickname` varchar(10) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `nickname` varchar(255) DEFAULT NULL,
-  `phoneNumber` varchar(255) DEFAULT NULL,
-  `birth` datetime DEFAULT NULL,
+  `phone_number` varchar(11) DEFAULT NULL,
+  `role` enum('ADMIN','USER') DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -51,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-28 21:36:03
+-- Dump completed on 2024-12-28 22:18:32

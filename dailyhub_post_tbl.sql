@@ -24,24 +24,24 @@ DROP TABLE IF EXISTS `post_tbl`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `post_tbl` (
   `id` bigint NOT NULL AUTO_INCREMENT,
+  `created_at` datetime(6) DEFAULT NULL,
+  `description` varchar(200) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `tag1` varchar(10) DEFAULT NULL,
+  `tag2` varchar(10) DEFAULT NULL,
+  `tag3` varchar(10) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `updated_at` datetime(6) DEFAULT NULL,
+  `main_category_id` bigint DEFAULT NULL,
   `sub_category_id` bigint DEFAULT NULL,
   `user_id` bigint DEFAULT NULL,
-  `main_category_id` bigint DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `tag1` varchar(255) DEFAULT NULL,
-  `tag2` varchar(255) DEFAULT NULL,
-  `tag3` varchar(255) DEFAULT NULL,
-  `createAt` datetime DEFAULT NULL,
-  `updateAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `post_tbl_ibfk_1` (`user_id`),
-  KEY `post_tbl_ibfk_2` (`main_category_id`),
-  KEY `post_tbl_ibfk_3` (`sub_category_id`),
-  CONSTRAINT `post_tbl_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `post_tbl_ibfk_2` FOREIGN KEY (`main_category_id`) REFERENCES `main_category_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `post_tbl_ibfk_3` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_category_tbl` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  KEY `FK1eeci7llpdtcicipjsdd4xkhr` (`main_category_id`),
+  KEY `FK2pfow9j4g1v2he2ypkt6r9h5` (`sub_category_id`),
+  KEY `FKifvbkpi4pwmk3trv8tmjyjxo8` (`user_id`),
+  CONSTRAINT `FK1eeci7llpdtcicipjsdd4xkhr` FOREIGN KEY (`main_category_id`) REFERENCES `main_category_tbl` (`id`),
+  CONSTRAINT `FK2pfow9j4g1v2he2ypkt6r9h5` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_category_tbl` (`id`),
+  CONSTRAINT `FKifvbkpi4pwmk3trv8tmjyjxo8` FOREIGN KEY (`user_id`) REFERENCES `user_tbl` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -63,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-28 21:36:04
+-- Dump completed on 2024-12-28 22:18:33
