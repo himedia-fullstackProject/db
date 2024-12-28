@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: dailyhub
+-- Host: localhost    Database: dailyhub
 -- ------------------------------------------------------
 -- Server version	8.0.40
 
@@ -23,12 +23,13 @@ DROP TABLE IF EXISTS `user_tbl`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `user_tbl` (
-  `username` varchar(255) NOT NULL,
+  `id` varchar(255) NOT NULL,
   `birthday` date DEFAULT NULL,
   `nickname` varchar(10) DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `phone_number` varchar(11) DEFAULT NULL,
-  PRIMARY KEY (`username`)
+  `username` varchar(255) DEFAULT 'null',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,7 +39,6 @@ CREATE TABLE `user_tbl` (
 
 LOCK TABLES `user_tbl` WRITE;
 /*!40000 ALTER TABLE `user_tbl` DISABLE KEYS */;
-INSERT INTO `user_tbl` VALUES ('wlsgusan','1998-04-07','JHN','1111','01089478170');
 /*!40000 ALTER TABLE `user_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-27 16:57:24
+-- Dump completed on 2024-12-28 20:47:31
