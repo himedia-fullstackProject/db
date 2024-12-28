@@ -26,7 +26,7 @@ CREATE TABLE `main_category_tbl` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `category_name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,6 +35,7 @@ CREATE TABLE `main_category_tbl` (
 
 LOCK TABLES `main_category_tbl` WRITE;
 /*!40000 ALTER TABLE `main_category_tbl` DISABLE KEYS */;
+INSERT INTO `main_category_tbl` VALUES (1,'fashion/beauty'),(2,'F&B'),(3,'health'),(4,'entertainment');
 /*!40000 ALTER TABLE `main_category_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-28 22:18:32
+-- Dump completed on 2024-12-28 22:22:08
