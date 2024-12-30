@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
--- Host: localhost    Database: dailyhub
+-- Host: 127.0.0.1    Database: dailyhub
 -- ------------------------------------------------------
 -- Server version	8.0.40
 
@@ -26,7 +26,6 @@ CREATE TABLE `post_tbl` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `created_at` datetime(6) DEFAULT NULL,
   `description` varchar(200) DEFAULT NULL,
-  `image` varchar(255) DEFAULT NULL,
   `tag1` varchar(10) DEFAULT NULL,
   `tag2` varchar(10) DEFAULT NULL,
   `tag3` varchar(10) DEFAULT NULL,
@@ -42,7 +41,7 @@ CREATE TABLE `post_tbl` (
   CONSTRAINT `FK1eeci7llpdtcicipjsdd4xkhr` FOREIGN KEY (`main_category_id`) REFERENCES `main_category_tbl` (`id`),
   CONSTRAINT `FK2pfow9j4g1v2he2ypkt6r9h5` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_category_tbl` (`id`),
   CONSTRAINT `FKifvbkpi4pwmk3trv8tmjyjxo8` FOREIGN KEY (`user_id`) REFERENCES `user_tbl` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -51,6 +50,7 @@ CREATE TABLE `post_tbl` (
 
 LOCK TABLES `post_tbl` WRITE;
 /*!40000 ALTER TABLE `post_tbl` DISABLE KEYS */;
+INSERT INTO `post_tbl` VALUES (7,NULL,'This post includes images.','Nature','Photogr','Travel','Post with Images',NULL,NULL,NULL,NULL),(8,NULL,'This post includes images.','Nature','Photogr','Travel','Post with Images',NULL,NULL,NULL,NULL),(9,NULL,'This post includes images.','Nature','Photogr','Travel','Post with Images',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `post_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -63,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-28 22:18:33
+-- Dump completed on 2024-12-30 19:24:56
