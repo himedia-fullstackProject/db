@@ -30,8 +30,9 @@ CREATE TABLE `user_tbl` (
   `phone_number` varchar(11) DEFAULT NULL,
   `role` enum('ADMIN','USER') DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
+  `join_date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +41,7 @@ CREATE TABLE `user_tbl` (
 
 LOCK TABLES `user_tbl` WRITE;
 /*!40000 ALTER TABLE `user_tbl` DISABLE KEYS */;
-INSERT INTO `user_tbl` VALUES (1,'1998-04-07','JHM','$2a$10$AYJ8pblJe8lPHuPfg0Blo.D0Y379Xtr4a9ku2HvTnagZ6nyCtGSgi','01011112222','USER','wlsgusan'),(2,'1998-04-07','JHM','$2a$10$bw8IjvlJJ43hlW71jcVfKe7r28rig3MsiF6y1dOqEer93QqiEo23G','01011112222','USER','wlsgusan2');
+INSERT INTO `user_tbl` VALUES (1,'1998-04-07','JHM','$2a$10$ouaCQ0XlWIpDD./ATRcPV..NIDeIQEeLt0J1FFnzWhLZkMP5fKwhO','01011112222','USER','wlsgusan','2025-01-04'),(2,'2000-01-01','gusan1','$2a$10$xkTMoQSAbDpGfwBhSuCV3Ob0nh2cDCjgKBgos2mgmC8EanlyAL/Tq','01011112222','USER','wlsgusan1','2025-01-05'),(3,'2000-01-02','gusan2','$2a$10$aTZ2R7uiyLYJU12ruJ/Y6.rBRGY.A6nRm67RqYQY84iHcM.6.0Oje','01011111112','USER','wlsgusan2','2025-01-05'),(4,'2000-01-03','gusan3','$2a$10$.hvXQsNvqrt3exq5eoRtcugxYr2DDTBQewSsGoV6qrgQUv8mR3m.m','01011111113','USER','wlsgusan3','2025-01-05'),(5,'2000-01-04','gusan4','$2a$10$ABjy/8lv4EL1g1fX4jt5S.OVF6rqM/zGJwKskxXKU6hOO46ky5KhO','01011111114','USER','wlsgusan4','2025-01-05'),(6,'2000-01-05','gusan5','$2a$10$HKIJcAPp2.lhIknx4cFUeOrj0cj0Ow7iHIUTzYujR4rkYTvn5W4LO','01011111115','USER','wlsgusan5','2025-01-05'),(7,'2000-01-06','gusan6','$2a$10$22x5SsBHegSDXuMWpH5s2.STlfXtpUL2tCZ09dv5dwnujV.c66rQy','01011111116','USER','wlsgusan6','2025-01-05'),(8,'2000-01-07','gusan7','$2a$10$x3cSUfZGWfhq/6FX22NPxuH/c2w./XKZoim22nKqVDKyXGsP7Kmxa','01011111117','USER','wlsgusan7','2025-01-05'),(9,'2000-01-08','gusan8','$2a$10$07yDMcqsyS/xHGe7tw2pfuAioTtxj8gXAa6xGNagR0YAJhLdiKUS.','01011111118','USER','wlsgusan8','2025-01-05'),(10,'2000-01-09','gusan9','$2a$10$yp2Z9KustuzU0JPGgINu1O4uAruXLcXhxbezJ5fqPI1eWkeasJPrO','01011111119','USER','wlsgusan9','2025-01-05'),(11,'2000-01-10','gusan10','$2a$10$ZoQTfNo3IGe8DknLJAi/e.BlK6kxZojvdgbR23Nv9AeWVVyB6GXze','01011111120','USER','wlsgusan10','2025-01-05');
 /*!40000 ALTER TABLE `user_tbl` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-12-30 19:43:43
+-- Dump completed on 2025-01-06  8:22:00
